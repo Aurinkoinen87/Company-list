@@ -1,0 +1,26 @@
+@import '../scss/vars';
+
+
+  .link {
+    padding: 10px 15px;
+    color: $text-primary;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    word-break: break-all;
+    align-items: center;
+    gap: 15px;
+    span:nth-child(1) {
+      color: rgb(194, 86, 23);
+    }
+    span:nth-child(2) {
+      color: rgb(73, 50, 201);
+      font-weight: 900;
+      font-size: 17px;
+    }
+    span:nth-child(3) {
+      font-size: 11px;
+      line-height: 14px;
+      color: rgb(58, 56, 70);
+    }
+  }
