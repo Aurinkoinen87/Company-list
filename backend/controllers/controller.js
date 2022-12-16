@@ -1,16 +1,15 @@
-const Company = require('../models/company')
+import Company from '../models/company.js'
 
-const getCompanies = (req, res) => {
+export const getCompanies = (req, res) => {
   Company.find()
   .then(data => console.log(data))
   .catch(error => console.log(error))
 }
 
-const getPersonnel = (req, res) => {
+export const getPersonnel = (req, res) => {
     Company.find()
     .then(data => console.log(data))
     .catch(error => console.log(error))
   }
 
 
-module.exports = { getCompanies, getPersonnel } 

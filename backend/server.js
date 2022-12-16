@@ -1,9 +1,10 @@
-const mongoose = require('mongoose')
-const express = require('express')
-const app = express()
-const router = require('./router/router')
+import mongoose from 'mongoose'
+import express from 'express'
+import { getCompanies } from './controllers/controller.js'
 
-const { getCompanies } = require('./controllers/controller')
+
+const app = express()
+
 
 const PORT = 7000
 
@@ -11,16 +12,18 @@ const PORT = 7000
 const db = 'mongodb+srv://alebastr:BC1PmPNUYwylSBBQ@davaidavai.q6aq7i0.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(db)
-.then(res => console.log(res))
+.then(res => console.log('Connected to DB'))
 .catch(err => console.log(err))
 
-app.listen(PORT, (error)=> error? console.log(error) : console.log(`listening port ${PORT}`))
+app.listen(PORT, (error)=> error? console.log(error) : console.log(`Started on port: ${PORT}`))
 
 app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
-router.get('/', getCompanies)
+app.get('/', (req, res)=> {
+  res.send('Ti krut mujik!')
+})
 
-app.use(router)
 
 app.use((req, res) => {
   res.status(404)

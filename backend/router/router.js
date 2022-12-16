@@ -1,9 +1,4 @@
-const express = require('express')
-const router = express.Router()
-
-const { getPersonnel } = require('../controllers/controller')
-
-router.get('/personnel', getPersonnel)
+import express from 'express'
 
 
-module.exports = router 
+

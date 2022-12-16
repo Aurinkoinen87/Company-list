@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
@@ -19,8 +19,9 @@ const companySchema = new Schema({
     type: Array,
     required: true
   }
-})
+},
+{ timestamps: true }
+)
 
-const Company = mongoose.model('Company', companySchema)
+export default mongoose.model('Company', companySchema)
 
-module.exports = Company
