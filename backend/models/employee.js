@@ -2,16 +2,16 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const companySchema = new Schema({
-  title: {
+const employeeSchema = new Schema({
+  name: {
     type: String,
     required: true
   },
-  personnelQ: {
+  surname: {
     type: String,
     required: true
   },
-  address: {
+  job: {
     type: String,
     required: true
   },
@@ -19,5 +19,4 @@ const companySchema = new Schema({
 { timestamps: true }
 )
 
-export default mongoose.model('Company', companySchema)
-
+export default mongoose.model('Employee', employeeSchema)
