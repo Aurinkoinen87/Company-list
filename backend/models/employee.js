@@ -11,10 +11,15 @@ const employeeSchema = new Schema({
     type: String,
     required: true
   },
-  job: {
+  jobTitle: {
     type: String,
     required: true
   },
+  company: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Company',
+    required: true
+  }
 },
 { timestamps: true }
 )

@@ -8,7 +8,7 @@ const companySchema = new Schema({
     required: true
   },
   personnelQ: {
-    type: String,
+    type: Number,
     required: true
   },
   address: {
