@@ -4,7 +4,9 @@ import { validationResult } from 'express-validator'
 export const createCompany = async (req, res) => {
   try {
     const errors = validationResult(req)
-    if(!errors.isEmpty()) return res.status(400).json(errors.array())
+    if(!errors.isEmpty()) {
+      return res.status(400).json(errors.array())
+    }
 
     const doc = new Company({ 
       title: req.body.title,
@@ -22,6 +24,17 @@ export const createCompany = async (req, res) => {
   }
 }
 
+export const getCompanies = async (req, res) => {
+  try {
+    const companies = await Company.find()
+    res.json({ companies })
+  } catch (e) {
+    console.log(e)
+    res.status(500).json({
+      message: 'something went wrong'
+    })
+  }
+}
 
 
 

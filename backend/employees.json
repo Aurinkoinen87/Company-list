@@ -5,5 +5,5 @@
   {"companyId": 3, "personId": 3, "surname": "Шум", "name": "Агнесса", "jobTitle": "Секретарь"},
   {"companyId": 4, "personId": 4, "surname": "Гайкин", "name": "Павел", "jobTitle": "Слесарь"},
   {"companyId": 5, "personId": 5, "surname": "Полетай", "name": "Лолита", "jobTitle": "Турагент"},
-  {"companyId": 6, "personId": 6, "surname": "Закусян", "name": "Зозо", "jobTitle": "Водитель"}
+  {"companyId": 6, "personId": 6, "surname": "Закусян", "name": "Заза", "jobTitle": "Водитель"}
 ]

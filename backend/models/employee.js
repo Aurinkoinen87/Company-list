@@ -15,9 +15,8 @@ const employeeSchema = new Schema({
     type: String,
     required: true
   },
-  company: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Company',
+  companyId: {
+    type: String,
     required: true
   }
 },

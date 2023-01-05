@@ -1,8 +1,9 @@
 import mongoose from 'mongoose'
 import express from 'express'
-import { createCompany } from './controllers/company-controller.js'
-import { getPersonnel } from './controllers/employee-controller.js'
-import { companyValidation } from './validations/validation.js'
+import cors from 'cors'
+import { getCompanies, createCompany } from './controllers/company-controller.js'
+import { getWorkers, addWorker } from './controllers/employee-controller.js'
+import { companyValidation, workerValidation } from './validations/validation.js'
 
 
 
@@ -11,8 +12,11 @@ const app = express()
 
 const PORT = 7000
 
+app.use(cors())
+app.use(express.json())
 
-const db = 'mongodb+srv://alebastr:BC1PmPNUYwylSBBQ@davaidavai.q6aq7i0.mongodb.net/companylist?retryWrites=true&w=majority'
+
+const db = 'mongodb+srv://alebastr:RooXVntj81UbqpIK@cluster0.cjwko2o.mongodb.net/company-list?retryWrites=true&w=majority'
 
 mongoose.connect(db)
 .then(res => console.log('Connected to DB'))
@@ -22,7 +26,11 @@ app.listen(PORT, (error)=> error? console.log(error) : console.log(`Started on p
 
 
 
+app.get('/companies', getCompanies)
 app.post('/companies', companyValidation, createCompany)
+
+app.get('/companies/:id', getWorkers)
+app.post('/companies/:id', workerValidation, addWorker)
 
 
 app.use((req, res) => {
