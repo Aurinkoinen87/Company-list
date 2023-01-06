@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 import express from 'express'
 import cors from 'cors'
-import { getCompanies, createCompany } from './controllers/company-controller.js'
-import { getWorkers, addWorker } from './controllers/employee-controller.js'
+import { getCompanies, createCompany, deleteCompany } from './controllers/company-controller.js'
+import { getWorkers, addWorker, deleteWorker } from './controllers/employee-controller.js'
 import { companyValidation, workerValidation } from './validations/validation.js'
 
 
@@ -28,9 +28,12 @@ app.listen(PORT, (error)=> error? console.log(error) : console.log(`Started on p
 
 app.get('/companies', getCompanies)
 app.post('/companies', companyValidation, createCompany)
+app.delete('/companies', deleteCompany)
 
 app.get('/companies/:id', getWorkers)
 app.post('/companies/:id', workerValidation, addWorker)
+app.delete('/companies', deleteWorker)
+
 
 
 app.use((req, res) => {

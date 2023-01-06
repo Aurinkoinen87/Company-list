@@ -40,3 +40,18 @@ export const getWorkers = async (req, res) => {
     })
   }
 }
+
+export const deleteWorker = async (req, res) => {
+  try {
+    const { id } = req.body
+    await Employee.findByIdAndDelete(id)
+    res.json({
+      message: 'success'
+     })
+  } catch (e) {
+    console.log(e)
+    res.status(500).json({
+      message: 'something went wrong'
+    })
+  }
+}

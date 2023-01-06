@@ -1,4 +1,5 @@
 import Company from '../models/company.js'
+import Employee from '../models/employee.js'
 import { validationResult } from 'express-validator'
 
 export const createCompany = async (req, res) => {
@@ -36,5 +37,21 @@ export const getCompanies = async (req, res) => {
   }
 }
 
-
+export const deleteCompany = async (req, res) => {
+  try {
+    const id = req.body.companyId
+    await Employee.deleteMany({
+      companyId: id
+    })
+    await Company.findByIdAndDelete(id)
+    res.json({
+      message: 'success'
+     })
+  } catch (e) {
+    console.log(e)
+    res.status(500).json({
+      message: 'something went wrong'
+    })
+  }
+}
 
