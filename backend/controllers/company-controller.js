@@ -54,3 +54,22 @@ export const deleteCompany = async (req, res) => {
   }
 }
 
+
+export const updateCompany = async (req, res) => {
+  try {
+    const { companyId, ...data } = req.body
+    const company = await Company.findByIdAndUpdate(companyId, 
+    {
+      ...data
+    },
+    {
+      returnDocument: 'after',
+    })
+    res.json({ company })
+  } catch (e) {
+    console.log(e)
+    res.status(500).json({
+      message: 'something went wrong'
+    })
+  }
+}
