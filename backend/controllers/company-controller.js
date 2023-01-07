@@ -11,7 +11,6 @@ export const createCompany = async (req, res) => {
 
     const doc = new Company({ 
       title: req.body.title,
-      personnelQ: req.body.personnelQ,
       address: req.body.address
     })
   

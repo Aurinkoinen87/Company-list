@@ -30,9 +30,9 @@ app.get('/companies', getCompanies)
 app.post('/companies', companyValidation, createCompany)
 app.delete('/companies', deleteCompany)
 
-app.get('/companies/:id', getWorkers)
-app.post('/companies/:id', workerValidation, addWorker)
-app.delete('/companies', deleteWorker)
+app.get('/companies/:id/workers', getWorkers)
+app.post('/companies/workers', workerValidation, addWorker)
+app.delete('/companies/workers', deleteWorker)
 
 
 
