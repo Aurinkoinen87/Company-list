@@ -45,9 +45,7 @@ export const getWorkers = async (req, res) => {
 
 export const deleteWorker = async (req, res) => {
   try {
-    const { workerId } = req.body
-    const { companyId } = req.body
-
+    const { companyId, workerId } = req.body
     const ok = await Employee.findByIdAndDelete(workerId)
     const company = await Company.findByIdAndUpdate(
       companyId,
@@ -69,8 +67,8 @@ export const deleteWorker = async (req, res) => {
 
 export const updateWorker = async (req, res) => {
   try {
-    const { id, ...data } = req.body
-    const worker = await Employee.findByIdAndUpdate(id, 
+    const { workerId, ...data } = req.body
+    const worker = await Employee.findByIdAndUpdate(workerId, 
     {
       ...data
     },

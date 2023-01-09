@@ -28,13 +28,13 @@ app.listen(PORT, (error)=> error? console.log(error) : console.log(`Started on p
 
 app.get('/companies', getCompanies)
 app.post('/companies', companyValidation, createCompany)
-app.put('/companies', companyValidation, updateCompany)
-app.delete('/companies', deleteCompany)
+app.put('/companies/:id', companyValidation, updateCompany)
+app.delete('/companies/:id', deleteCompany)
 
-app.get('/companies/:id/workers', getWorkers)
-app.post('/companies/workers', workerValidation, addWorker)
-app.put('/companies/workers', workerValidation, updateWorker)
-app.delete('/companies/workers', deleteWorker)
+app.get('/workers/:id', getWorkers)
+app.post('/workers', workerValidation, addWorker)
+app.put('/workers', workerValidation, updateWorker)
+app.delete('/workers', deleteWorker)
 
 
 

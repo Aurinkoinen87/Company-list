@@ -38,7 +38,7 @@ export const getCompanies = async (req, res) => {
 
 export const deleteCompany = async (req, res) => {
   try {
-    const id = req.body.companyId
+    const id = req.params.id
     await Employee.deleteMany({
       companyId: id
     })
@@ -57,8 +57,9 @@ export const deleteCompany = async (req, res) => {
 
 export const updateCompany = async (req, res) => {
   try {
-    const { companyId, ...data } = req.body
-    const company = await Company.findByIdAndUpdate(companyId, 
+    const id = req.params.id
+    const data = req.body
+    const company = await Company.findByIdAndUpdate(id, 
     {
       ...data
     },
