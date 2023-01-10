@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.scss';
 import { Routes, Route } from "react-router-dom";
 import Companies from "./components/Companies";
@@ -12,10 +12,10 @@ function App() {
   return (
       <div className="wrapper">
         <div className="table">
-        <Companies />
+        
         <Routes>
-          <Route path='/' element={<div></div>} />
-          <Route path='/company/:id' element={<Employees />} />
+          <Route path='/' element={<Companies />} />
+          {/* <Route path='/workers/:id' element={<Employees />} /> */}
           <Route path="*" element={<div className="not-found">...Nothing was found</div>}/>
         </Routes>
         </div>

@@ -4,10 +4,10 @@ import styles from './ListItem.module.scss'
 
 
 
-function ListItem({ companyId, title, personnelQ, address, personId, surname, name, jobTitle }) {
+function ListItem({ id, title, personnelQ, address }) {
 
   return (
-    <Link className={styles.link} to={`/company/${companyId}`}>
+    <Link className={styles.link} to={`/company/${id}`}>
       <span>{title}</span>
       <span>{personnelQ}</span>
       <span>{address}</span>

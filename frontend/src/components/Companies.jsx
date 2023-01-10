@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { companySelector } from '../redux/slices/companySlice'
+import { companySelector, fetchCompanies } from '../redux/slices/companySlice'
 import Table from './Table'
 
 
@@ -10,7 +10,15 @@ import Table from './Table'
 
 function Companies() {
 
+  const dispatch = useDispatch()
+
+  useEffect(()=> {
+    console.log('1')
+    dispatch(fetchCompanies())
+  },[])
+
   const { companies } = useSelector(companySelector)
+  console.log(companies)
   const titles = ['title', 'personnel', 'address']
 
   return (

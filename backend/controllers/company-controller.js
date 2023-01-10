@@ -27,7 +27,7 @@ export const createCompany = async (req, res) => {
 export const getCompanies = async (req, res) => {
   try {
     const companies = await Company.find()
-    res.json({ companies })
+    res.json(companies)
   } catch (e) {
     console.log(e)
     res.status(500).json({

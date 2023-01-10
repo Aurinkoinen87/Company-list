@@ -10,11 +10,11 @@ function Table({ data, name, titles }) {
         <h2>{name}</h2>
       </header>
       <ul className={styles.table__titles}>
-        {titles.map(title => <li>{title}</li>)}
+        {titles.map((title, i) => <li key={i}>{title}</li>)}
       </ul>
       <ul className={styles.table__list}>
         {data.map(item => {        
-        return <li className={styles.table__item}><ListItem key={item.id} {...item} /></li>})
+        return <li className={styles.table__item} key={item.id}><ListItem {...item} /></li>})
 }
 
       </ul>
