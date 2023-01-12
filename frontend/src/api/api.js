@@ -24,6 +24,9 @@ const API = {
   createCompany(title, address) {
       return instance.post(`/companies`, { title, address })
   },
+  getWorkers(id) {
+      return instance.get(`/workers/${id}`)
+  }
 
 }
 

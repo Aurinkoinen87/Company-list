@@ -34,7 +34,7 @@ export const getWorkers = async (req, res) => {
     const companyId = req.params.id
     const company = await Company.findById(companyId)
     const workers = await Employee.find({ companyId })
-    res.json({ workers })
+    res.json(workers)
   } catch (e) {
     console.log(e)
     res.status(500).json({

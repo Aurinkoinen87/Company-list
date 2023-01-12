@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import API from '../../api/api'
 
 
 
@@ -12,17 +13,37 @@ const employeeSlice = createSlice({
   name: 'employees',
   initialState,
   reducers: {
-    setLoading(state, action){
-      state.loading = action.payload
-    }
-    },
 
+    },
+    extraReducers: (builder) => {
+      builder.addCase(fetchWorkers.fulfilled, (state, action) => {
+        state.employees = action.payload
+      })
+    },
 })
+
+export const fetchWorkers = createAsyncThunk(
+  'employees/fetchWorkers',
+  async () => {
+    const response = await API.getWorkers()
+    return response.data
+  }
+)
 
 export const employeeSelector = (state) => state.employees
 
-
-
-export const { setLoading } = employeeSlice.actions
+export const {} = employeeSlice.actions
 
 export default employeeSlice.reducer
+
+
+
+
+
+
+
+
+
+
+
+

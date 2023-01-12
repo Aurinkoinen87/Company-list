@@ -27,7 +27,12 @@ export const createCompany = async (req, res) => {
 export const getCompanies = async (req, res) => {
   try {
     const companies = await Company.find()
-    res.json(companies)
+    const data = companies.map(c => {
+    const { _id, ...rest} = c._doc
+    const id = _id
+    return { ...rest, id }
+    })
+    res.json(data)
   } catch (e) {
     console.log(e)
     res.status(500).json({

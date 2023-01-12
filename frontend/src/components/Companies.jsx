@@ -4,10 +4,6 @@ import { companySelector, fetchCompanies } from '../redux/slices/companySlice'
 import Table from './Table'
 
 
-
-
-
-
 function Companies() {
 
   const dispatch = useDispatch()
