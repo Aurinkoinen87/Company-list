@@ -1,5 +1,6 @@
 import React from 'react'
-import ListItem from './ListItem'
+import CompanyItem from './CompanyItem'
+import WorkerItem from './WorkerItem'
 import styles from './Table.module.scss' 
 
 function Table({ data, name, titles }) {
@@ -14,7 +15,9 @@ function Table({ data, name, titles }) {
       </ul>
       <ul className={styles.table__list}>
         {data.map(item => {        
-        return <li className={styles.table__item} key={item.id}><ListItem {...item} /></li>})
+        return <li className={styles.table__item} key={item.id}>
+          {name == 'Company'? <CompanyItem {...item} /> : <WorkerItem {...item} />}
+          </li>})
 }
 
       </ul>

@@ -24,8 +24,8 @@ const employeeSlice = createSlice({
 
 export const fetchWorkers = createAsyncThunk(
   'employees/fetchWorkers',
-  async () => {
-    const response = await API.getWorkers()
+  async (id) => {
+    const response = await API.getWorkers(id)
     return response.data
   }
 )

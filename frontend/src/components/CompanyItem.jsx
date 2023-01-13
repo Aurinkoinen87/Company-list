@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from './ListItem.module.scss' 
+import styles from './CompanyItem.module.scss' 
 
 
 
-function ListItem({ title, personnelQ, address, id }) {
+function CompanyItem({ title, personnelQ, address, id }) {
   
   return (
-    <Link className={styles.link} to={`/workers/${id}`}>
+    <Link className={styles.link} to={`/${id}`}>
       <span>{title}</span>
       <span>{personnelQ}</span>
       <span>{address}</span>
@@ -15,4 +15,4 @@ function ListItem({ title, personnelQ, address, id }) {
   )
 }
 
-export default ListItem
+export default CompanyItem

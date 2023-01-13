@@ -9,7 +9,6 @@ function Companies() {
   const dispatch = useDispatch()
 
   useEffect(()=> {
-    console.log('1')
     dispatch(fetchCompanies())
   },[])
 

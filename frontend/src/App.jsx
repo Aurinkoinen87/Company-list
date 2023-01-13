@@ -12,11 +12,11 @@ function App() {
   return (
       <div className="wrapper">
         <div className="table">
-        
+        <Companies />
+
         <Routes>
-          <Route path='/' element={<Companies />} />
-          <Route path='/workers/:id' element={<Employees />} />
-          <Route path="*" element={<div className="not-found">...Nothing was found</div>}/>
+          <Route path='/:id' element={<Employees />} />
+          {/* <Route path="*" element={<div className="not-found">...Nothing was found</div>}/> */}
         </Routes>
         </div>
       </div>
