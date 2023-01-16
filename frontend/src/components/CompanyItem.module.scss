@@ -1,14 +1,21 @@
 @import '../scss/vars';
 
 
-  .link {
-    padding: 10px 20px;
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    width: 92%;
+    padding: 10px 20px; 
     color: $text-primary;
     font-weight: 700;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     word-break: keep-all;
     align-items: center;
+    border-radius: 20px;
+    border: $border;
     span:nth-child(1) {
       color: rgb(194, 86, 23);
     }
@@ -25,3 +32,15 @@
       color: rgb(58, 56, 70);
     }
   }
+
+
+  .edit {
+    width: 7%;
+    height: 40px;
+    border-radius: 50%;
+    border: $border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
