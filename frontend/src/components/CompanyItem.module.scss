@@ -17,10 +17,10 @@
     border-radius: 20px;
     border: $border;
     span:nth-child(1) {
-      color: rgb(194, 86, 23);
+      color: $name;
     }
     span:nth-child(2) {
-      color: rgb(73, 50, 201);
+      color: $black;
       font-weight: 900;
       font-size: 17px;
       display: flex;
@@ -29,18 +29,8 @@
     span:nth-child(3) {
       font-size: 11px;
       line-height: 14px;
-      color: rgb(58, 56, 70);
+      color: $text-secondary;
     }
   }
-
-
-  .edit {
-    width: 7%;
-    height: 40px;
-    border-radius: 50%;
-    border: $border;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
+

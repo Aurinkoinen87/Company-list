@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './CompanyItem.module.scss' 
+import Edit from './Edit' 
 
 
 
@@ -8,7 +9,7 @@ function CompanyItem({ title, personnelQ, address, id }) {
 
 const isActive = ({ isActive }) => {
   return {
-    background: isActive? '#60d144' : ''
+    background: isActive? 'rgba(108, 151, 207, .5)' : ''
   }
 }
   return (
@@ -18,7 +19,7 @@ const isActive = ({ isActive }) => {
       <span>{personnelQ}</span>
       <span>{address}</span>
     </NavLink>
-    <div className={styles.edit}>a</div>
+    <Edit />
     </div>
 
   )
