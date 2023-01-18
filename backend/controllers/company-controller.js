@@ -1,6 +1,7 @@
 import Company from '../models/company.js'
 import Employee from '../models/employee.js'
 import { validationResult } from 'express-validator'
+import * as Helper from '../helpers/helpers.js'
 
 export const createCompany = async (req, res) => {
   try {
@@ -27,11 +28,7 @@ export const createCompany = async (req, res) => {
 export const getCompanies = async (req, res) => {
   try {
     const companies = await Company.find()
-    const data = companies.map(c => {
-    const { _id, ...rest} = c._doc
-    const id = _id
-    return { ...rest, id }
-    })
+    const data = Helper.getClearId(companies)
     res.json(data)
   } catch (e) {
     console.log(e)

@@ -9,7 +9,7 @@ function CompanyItem({ title, personnelQ, address, id }) {
 
 const isActive = ({ isActive }) => {
   return {
-    background: isActive? 'rgba(108, 151, 207, .5)' : ''
+    background: isActive? 'rgba(106, 255, 44, .8)' : ''
   }
 }
   return (

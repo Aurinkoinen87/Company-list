@@ -2,6 +2,7 @@
 
 .table {
   border-right: $border;
+  position: relative;
   >header {
     height: 60px;
     border-bottom: $border;

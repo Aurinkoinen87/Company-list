@@ -2,6 +2,7 @@ import React from 'react'
 import CompanyItem from './CompanyItem'
 import WorkerItem from './WorkerItem'
 import styles from './Table.module.scss' 
+import SvgSelector from './SvgSelector' 
 
 function Table({ data, name, titles }) {
 
@@ -17,10 +18,9 @@ function Table({ data, name, titles }) {
         {data.map(item => {        
         return <li className={styles.table__item} key={item.id}>
           {name == 'Company'? <CompanyItem {...item} /> : <WorkerItem {...item} />}
-          </li>})
-}
-
+          </li>})}
       </ul>
+      <SvgSelector name={'add'} />
     </div>      
   )
 }
