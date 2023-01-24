@@ -1,18 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Edit.module.scss' 
 import SvgSelector from './SvgSelector'
 
-function Edit() {
-
-  let[edit, setEdit] = useState(false)
-
-  const onClickHandler = () => {
-      setEdit(!edit)
-  }
+function Edit({ setEdit }) {
 
   return (
-    <div className={styles.edit} onClick={onClickHandler}>
-      {edit? <div></div> : <SvgSelector name={'pencil'} />}
+    <div className={styles.edit} onClick={()=> setEdit(true)}>
+      <SvgSelector name={'pencil'} />
     </div>
   )
 }
